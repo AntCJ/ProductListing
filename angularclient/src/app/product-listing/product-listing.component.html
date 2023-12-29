@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-header">
+        <h2>Products</h2>
+        <button type="button" class="btn btn-primary" routerLink="/create">Create New Product</button>
+    </div>
+    <div *ngIf="error" class="card-body">
+        <div class="row justify-content-center">
+            <div class="col-8 alert alert-danger">{{ error }}</div>
+        </div>
+    </div>
+    <div *ngIf="!error" class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Code</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>{{ product.id }}</td>
+                    <td><a [routerLink]="['/edit', product.code]">{{ product.code }}</a></td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.brand }}</td>
+                    <td>{{ product.type }}</td>
+                    <td>{{ product.description }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <app-pagination
+            [currentPage]="currentPage"
+            [totalPages]="totalPages"
+            (pageChanged)="onPageChange($event)"
+        ></app-pagination>
+    </div>
+</div>

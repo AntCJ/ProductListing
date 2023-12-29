@@ -17,5 +17,25 @@ buildNumber.properties
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
+# Compiled output
+angularclient/dist
+angularclient/tmp
+angularclient/out-tsc
+angularclient/bazel-out
+
+# Node
+angularclient/node_modules
+angularclient/npm-debug.log
+angularclient/yarn-error.log
+
+# Miscellaneous
+angularclient/.angular/cache
+angularclient/.sass-cache/
+angularclient/connect.lock
+angularclient/coverage
+angularclient/libpeerconnection.log
+angularclient/testem.log
+angularclient/typings
+
 # MAC system file
 .DS_Store

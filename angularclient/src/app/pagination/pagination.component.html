@@ -1,0 +1,17 @@
+<div class="d-grid mt-3 justify-content-center">
+    <div>
+        <span *ngIf="hasPreviousPage()"><a (click)="changePage(1)" href="javascript:void(0);">First</a></span>
+        <span *ngIf="!hasPreviousPage()">First</span>
+        <span> | </span>
+        <span *ngIf="hasPreviousPage()"><a (click)="changePage(currentPage-1)" href="javascript:void(0);">Previous</a></span>
+        <span *ngIf="!hasPreviousPage()">Previous</span>
+        <span> | </span>
+        <span><a (click)="changePage(currentPage)" href="javascript:void(0);">Current</a></span>
+        <span> | </span>
+        <span *ngIf="hasNextPage()"><a (click)="changePage(currentPage+1)" href="javascript:void(0);">Next</a></span>
+        <span *ngIf="!hasNextPage()">Next</span>
+        <span> | </span>
+        <span *ngIf="hasNextPage()"><a (click)="changePage(totalPages)" href="javascript:void(0);">Last</a></span>
+        <span *ngIf="!hasNextPage()">Last</span>
+    </div>
+</div>
